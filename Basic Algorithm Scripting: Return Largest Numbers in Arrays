@@ -1,17 +1,15 @@
 function largestOfFour(arr) {
   let arrSort=[];
  for (let i=0; i<=arr.length-1; i++) {
-   for (let j=0; j<=arr[i].length; j++) {
-     if (arr[i][j]>arr[i][j+1]) {
-       arrSort=arr[i][j];
-     } else {
-       arrSort=arr[i][j+1];
-     }
-     console.log(arrSort);
+   for (let j=0; j<=arr[i].length-1; j++) {
+    if (arr[i][j]>arr[i][j+1])
+     arrSort.push(arr[i][j])
    }
-   console.log(arrSort);
+    //arrSort.push(arr[i]);
+    //console.log(arr[i].length);
+   //console.log(arrSort);
  }
- console.log(arrSort);
+console.log(arrSort);
   return arr;
 
 }
