@@ -5,7 +5,7 @@ let j=0;
 for (let i=0; i<str.length; i++) {
   if (str[i]!=' ') {
     word=word+str[i];
-    console.log(word);
+    
   } else {
     arrayWord[j]=word;
     word='';
@@ -13,7 +13,18 @@ for (let i=0; i<str.length; i++) {
   }
 } 
 arrayWord[j]=word;
-console.log(arrayWord);                                     
+console.log(arrayWord);  
+
+let strW='';
+for (let z=0; z<=(arrayWord.length-1); z++) {
+    if (arrayWord[z].length>strW.length) {
+    strW=arrayWord[z];
+    
+  }
+}
+
+  console.log(strW);
+  str=strW;
   return str.length;
 }
 
