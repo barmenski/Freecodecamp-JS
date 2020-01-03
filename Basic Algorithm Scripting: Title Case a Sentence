@@ -1,5 +1,19 @@
 function titleCase(str) {
-  return str;
+  let strA="";
+  strA=str[0].toUpperCase();
+  for (let i=1; i<=str.length-1; i++) {
+    if (str[i]===" ") {
+    strA=strA+str[i];
+    strA=strA+str[i+1].toUpperCase();
+    i++;
+    } else {
+      strA=strA+str[i].toLowerCase();
+    }
+  }
+  console.log(strA);
+  return strA;
 }
 
+
 titleCase("I'm a little tea pot");
+titleCase("sHoRt AnD sToUt");
