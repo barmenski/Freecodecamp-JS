@@ -1,6 +1,25 @@
 function getIndexToIns(arr, num) {
-  // Find my place in this sorted array.
-  return num;
-}
+  function compare (a, b) {
+    if (a>b) return 1;
+    if (a==b) return 0;
+    if (a<b) return -1;
+  }
 
+  arr.sort(compare);
+  console.log(arr);
+  let indexMax=arr.length;
+for (let i=0; i<=arr.length-1; i++) {
+  if (arr[i]>=num) {
+    indexMax=i;
+    console.log(indexMax);
+    break;
+  }
+}
+console.log(indexMax);
+//if (indexMax==0) indexMax=arr.length;
+  return indexMax;
+}
+getIndexToIns([10, 20, 30, 40, 50], 35);
+getIndexToIns([2, 5, 10], 15);
+getIndexToIns([3, 10, 5], 3);
 getIndexToIns([40, 60], 50);
