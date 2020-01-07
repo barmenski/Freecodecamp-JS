@@ -16,7 +16,6 @@ for (let i=0; i<=arr.length-1; i++) {
   }
 }
 console.log(indexMax);
-//if (indexMax==0) indexMax=arr.length;
   return indexMax;
 }
 getIndexToIns([10, 20, 30, 40, 50], 35);
