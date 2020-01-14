@@ -1,5 +1,19 @@
 function mutation(arr) {
-  return arr;
+ // console.log(arr[0].toLowerCase());
+ let str=arr[0].toLowerCase();
+ let findStr=arr[1].toLowerCase();
+ let z=0;
+ console.log("string: "+str+' \n'+"leters: "+findStr)
+ for (let i=0; i<=findStr.length-1; i++) {
+   if (str.indexOf(findStr[i])>=0) {
+     z=true;
+   } else {
+     z=false;
+     break;
+    } 
+ }
+ console.log(z);
+  return z;
 }
 
-mutation(["hello", "hey"]);
+mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])
