@@ -120,7 +120,11 @@ var ratings = [];
 }
 */
 
-ratings=watchList.map(title=>title.Title, rating=>rating.imdbRating)
+ratings=watchList.map(item=>({
+  title: item['Title'],
+  rating: item['imdbRating']
+}));
 // Add your code above this line
 
 console.log(JSON.stringify(ratings));
+
