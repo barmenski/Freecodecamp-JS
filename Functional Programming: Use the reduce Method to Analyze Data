@@ -119,10 +119,7 @@ var onlyNolan = watchList.filter(item=>item["Director"]==="Christopher Nolan");
 //console.log(onlyNolan);
 var nolanRatings = onlyNolan.map(item=>+item["imdbRating"]);
 console.log(nolanRatings);
-var averageRating=nolanRatings.reduce(function(sum, item){
-sum=sum+item
-  return sum/nolanRatings.length
-  },0);
+var averageRating=nolanRatings.reduce((sum, item)=>sum+item,0)/nolanRatings.length;
   // Add your code above this line
   return averageRating;
 }
