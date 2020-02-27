@@ -1,0 +1,16 @@
+// the global variable
+var globalTitle = "Winter Is Coming";// problem with " Winter Is  Coming"
+
+// Add your code below this line
+function urlSlug(title) {
+var lcTitle=title.toLowerCase();
+var splTitle=lcTitle.split(/\W/);
+console.log(splTitle);
+var urlTitle=splTitle.join("-");
+console.log(urlTitle);
+return urlTitle;
+}
+
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
