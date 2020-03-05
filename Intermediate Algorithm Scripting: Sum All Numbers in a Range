@@ -7,11 +7,15 @@ if (diff<0) {
     var minItem=arr[0]
   }
 for (let i=1; i<diff; i++){
-  console.log('sum='+sum+" : "+'minItem='+minItem+" : "+'+1'+" : "+'i='+i);
-  sum=sum+minItem+1;
+  console.log('sum='+sum+" : "+'minItem='+minItem+" : "+'+1'+" : "+'i='+i+" : "+"diff="+diff);
+  sum=sum+minItem+i;
   console.log(sum);
+  
 }
+console.log('--------------------------------------------');
   return sum;
 }
 
 sumAll([1, 4]);
+sumAll([10, 5]);
+sumAll([3, 8]);
