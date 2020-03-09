@@ -29,3 +29,18 @@ function diffArray(arr1, arr2) {
 }
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+
+---------------------------------------------------------
+
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var sumArr=arr1.concat(arr2);
+for (let i=0; i<sumArr.length; i++) {
+  var inc=sumArr.includes(arr1[i]);
+  console.log('arr1[i]='+arr1[i]+" "+inc);
+}
+  console.log(inc);
+  return newArr;
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
