@@ -1,46 +1,19 @@
 function diffArray(arr1, arr2) {
   var newArr = [];
-  newArr=arr1.filter(function(item) {
-    item===5;
-  })
-  console.log(newArr);
-  // Same, same; but different.
-  return newArr;
-}
-
-diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-
---------------------------------------------------
-function diffArray(arr1, arr2) {
-  var newArr = [];
-  //var item1=arr1[0];
-  /*var maxArrLength;
-  if (arr1.length>arr2.length) {
-    maxArrLength=arr1.length} else {
-      maxArrLength=arr2.length
-    }*/
   for (let i=0; i<arr1.length; i++) {
-    for (let j=0; j<arr2.length; j++) {
-      if (arr1[i]===arr2[j])
+    var mark=arr2.includes(arr1[i]);
+    if (mark===false) {
+      newArr.push(arr1[i]);
     }
   }
-  //newArr=arr2.filter(item=>item1!=item);
+    for (let j=0; j<arr2.length; j++) {
+    var mark=arr1.includes(arr2[j]);
+    if (mark===false) {
+      newArr.push(arr2[j]);
+    }
+  }
   return newArr;
 }
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
-
----------------------------------------------------------
-
-function diffArray(arr1, arr2) {
-  var newArr = [];
-  var sumArr=arr1.concat(arr2);
-for (let i=0; i<sumArr.length; i++) {
-  var inc=sumArr.includes(arr1[i]);
-  console.log('arr1[i]='+arr1[i]+" "+inc);
-}
-  console.log(inc);
-  return newArr;
-}
-
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
