@@ -1,0 +1,21 @@
+function destroyer() {
+  var arg=Array.prototype.slice.call(arguments);
+  var arr=arg[0];
+  var key=arg.slice(1);
+  console.log(arg);
+  console.log(key);
+  
+   /* arr.map(function(item) {
+      for (let i=0; i<.length; i++) {
+      if(item=key[i]) {
+        delete arr[i];
+        }
+      }
+    });
+    console.log(arr);*/
+  
+  //console.log(result);
+  return result;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
