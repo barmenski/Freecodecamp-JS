@@ -1,19 +1,18 @@
-function diffArray(arr1, arr2) {
-  var newArr = [];
-  for (let i=0; i<arr1.length; i++) {
-    var mark=arr2.includes(arr1[i]);
-    if (mark===false) {
-      newArr.push(arr1[i]);
-    }
-  }
-    for (let j=0; j<arr2.length; j++) {
-    var mark=arr1.includes(arr2[j]);
-    if (mark===false) {
-      newArr.push(arr2[j]);
-    }
-  }
-  return newArr;
+function destroyer() {
+  var arg=Array.prototype.slice.call(arguments);
+  var arr=arg[0];
+  var key=arg.slice(1);
+  var result=[];
+  console.log(arg);
+  console.log(key);
+
+  for (let i=0; i<arr.length; i++) {
+    if (!key.includes(arr[i])) {
+      result.push(arr[i]);
+    };
+   }
+  console.log(result);
+  return result;
 }
 
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
-console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
