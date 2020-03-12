@@ -1,8 +1,9 @@
 function whatIsInAName(collection, source) {
   var arr = [];
   // Only change code below this line
-for (let i=0; i<collection.length; i++) {
-  arr=collection.filter()
+for (let i=0; i<source.length; i++) {
+  arr=collection.filter(item=>item[i]=="Capulet");
+  console.log(arr);
 }
 
   // Only change code above this line
