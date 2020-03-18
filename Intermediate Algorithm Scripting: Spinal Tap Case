@@ -1,4 +1,10 @@
 function spinalCase(str) {
+  //var tryCatch=str.replace(/\b/gi, str=>str.toLowerCase());
+   var tryCatch=str.replace(/\s/g, "-");
+   tryCatch=tryCatch.toLowerCase();
+  console.log(tryCatch);
+  
+  str=tryCatch
   return str;
 }
 
