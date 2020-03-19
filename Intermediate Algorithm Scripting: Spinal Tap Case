@@ -1,11 +1,11 @@
 function spinalCase(str) {
   //var tryCatch=str.replace(/\b/gi, str=>str.toLowerCase());
-   var tryCatch=str.replace(/\s/g, "-");
+  //\B[A-Z] https://regex101.com/
+   var tryCatch=str.replace(/\s|\B[A-Z]/g, "-");
    tryCatch=tryCatch.toLowerCase();
   console.log(tryCatch);
-  
   str=tryCatch
   return str;
 }
 
-spinalCase('This Is Spinal Tap');
+spinalCase('This Is_Spinal-TapThisIsSpinalTap');
