@@ -1,11 +1,12 @@
 function spinalCase(str) {
   //var tryCatch=str.replace(/\b/gi, str=>str.toLowerCase());
-  //\B[A-Z] https://regex101.com/
-   var tryCatch=str.replace(/\s|\B[A-Z]/g, "-");
-   tryCatch=tryCatch.toLowerCase();
+  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  console.log(str);
+  var tryCatch=str.replace(/\s+|_+/g, "-");
+  tryCatch=tryCatch.toLowerCase();
   console.log(tryCatch);
   str=tryCatch
   return str;
 }
 
-spinalCase('This Is_Spinal-TapThisIsSpinalTap');
+spinalCase('This Is Spinal Tap thisIsSpinalTap The_Andy_Griffith_Show');
