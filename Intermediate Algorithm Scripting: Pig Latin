@@ -1,0 +1,10 @@
+function translatePigLatin(str) {
+  var str1=str[0];
+  console.log(str1);
+  var str2=str.slice(1);
+  console.log(str2);
+  
+  return str;
+}
+
+translatePigLatin("consonant");
