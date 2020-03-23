@@ -17,3 +17,5 @@ console.log(str);
 
 translatePigLatin("consonant");
 translatePigLatin("algorithm")
+
+^[^aeiou]+
