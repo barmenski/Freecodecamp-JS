@@ -1,45 +1,16 @@
 function translatePigLatin(str) {
-  var str1=str[0];
- // console.log(str1);
-  var str2=str.slice(1);
-  //console.log(str2);
-
-  var reg=/[a,e,i,o,u,y]/;
- // console.log(reg.test(str1))
-  if (reg.test(str1)) {
-    str=str+'way;'
-  } else {
-    str=str2+str1+'ay';
-  }
-console.log(str);
+  var reg=/^[^aeiou]+/;
+  var result=str.match(reg);
+  //console.log(result[0]); если раскомментировать, то не заработает
+if (result!==null) {
+  var str1=result[0]; //согласный
+  var str2=str.slice(str1.length);
+  str=str2+str1+"ay";
+} else {
+  str=str+"way";//гласный
+}
+ console.log(str);
   return str;
 }
 
-translatePigLatin("consonant");
-translatePigLatin("algorithm")
-
--------------------
-
-function translatePigLatin(str) {
-  var reg=/^[^aeiou]+/; - выбирает только согласные жадно, на гласные возвращает null
-  var result=str.match(reg);- выбирает только согласные жадно, на гласные возвращает null
-  var str1=result[0];
-  console.log(str1);
-  var str2=str.slice(1);
-  //console.log(str2);
-
-  
- // console.log(reg.test(str1))
-  if (reg.test(str1)) {
-    str=str+'way;'
-  } else {
-    str=str2+str1+'ay';
-  }
-console.log(str);
-  return str;
-}
-
-translatePigLatin("schwartz");
-translatePigLatin("algorithm")
-
-^[^aeiou]+
+translatePigLatin("algorithm");
