@@ -1,10 +1,19 @@
 function translatePigLatin(str) {
   var str1=str[0];
-  console.log(str1);
+ // console.log(str1);
   var str2=str.slice(1);
-  console.log(str2);
-  
+  //console.log(str2);
+
+  var reg=/[a,e,i,o,u,y]/;
+ // console.log(reg.test(str1))
+  if (reg.test(str1)) {
+    str=str+'way;'
+  } else {
+    str=str2+str1+'ay';
+  }
+console.log(str);
   return str;
 }
 
 translatePigLatin("consonant");
+translatePigLatin("algorithm")
