@@ -1,0 +1,19 @@
+function pairElement(str) {
+  var result=[];
+  for (let i=0; i<str.length; i++) {
+    var a=[];
+    for (let j=0; j<2; j++) {
+      switch (str[i]) {
+        case "G":
+          a.push("C");
+        break;
+        case "C":
+          a.push("G");
+        break;
+      }
+    }
+  }
+  return str;
+}
+
+pairElement("GCG");
