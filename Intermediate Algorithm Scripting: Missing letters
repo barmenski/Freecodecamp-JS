@@ -6,6 +6,7 @@ function fearNotLetter(str) {
     if (str.charCodeAt(i)!=start+i) {
       console.log("-"+str.charCodeAt(i), start+i, i+"-")
       var result=String.fromCharCode(start+i);
+      break;
     } 
   }
   if (result===str[str.length-1]) {
@@ -17,4 +18,4 @@ function fearNotLetter(str) {
   return str;
 }
 
-fearNotLetter("abcdefghjklmno");
+fearNotLetter("stvwx");
