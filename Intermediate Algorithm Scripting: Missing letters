@@ -1,0 +1,20 @@
+function fearNotLetter(str) {
+  var start=str.charCodeAt(0);
+ 
+  for (let i=0; i<str.length; i++) {
+    console.log(str[i], str.charCodeAt(i), start+i, i)
+    if (str.charCodeAt(i)!=start+i) {
+      console.log("-"+str.charCodeAt(i), start+i, i+"-")
+      var result=String.fromCharCode(start+i);
+    } 
+  }
+  if (result===str[str.length-1]) {
+    str=undefined;
+  } else {
+    str=result;
+  }
+  console.log(str);
+  return str;
+}
+
+fearNotLetter("abcdefghjklmno");
