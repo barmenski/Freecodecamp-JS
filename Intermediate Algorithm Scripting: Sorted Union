@@ -1,27 +1,21 @@
 function uniteUnique(arr) {
-  console.log(Array.prototype.slice.call(arguments))
-  return arr;
-}
-
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
-
-
-
-/*function destroyer() {
-  var arg=Array.prototype.slice.call(arguments);
-  var arr=arg[0];
-  var key=arg.slice(1);
-  var result=[];
- // console.log(arg);
- // console.log(key);
-
-  for (let i=0; i<arr.length; i++) {
-    if (!key.includes(arr[i])) {
-      result.push(arr[i]);
-    };
-   }
-  console.log(result);
+  var arrArg=Array.prototype.slice.call(arguments);
+ // console.log()
+  var arrStart=arrArg[0];
+  var arrOther=[];
+  var result=arrStart;
+  for (let i=1; i<arrArg.length; i++) {
+    arrOther=arrOther.concat(arrArg[i]);
+  };
+ //console.log(arrOther)
+  
+  for (let j=0; j<arrOther.length; j++) {
+    if (!arrStart.includes(arrOther[j])) {
+      result.push(arrOther[j]);
+    }
+  }
+  console.log(result)
   return result;
 }
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);*/
+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
