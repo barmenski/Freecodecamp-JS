@@ -1,0 +1,12 @@
+function sumFibs(num) {
+  let result=[1];
+  for (let i=1; i<num; i++) {
+   result.push(result[0]);
+
+
+  }
+  num=result;
+  return num;
+}
+console.log(sumFibs(4))
+sumFibs(4);
