@@ -4,12 +4,11 @@ function sumFibs(num) {
   let sum=0;
   let n=1;
   let sumF=0;
-  while (temp<num) {
+  while (temp<=num) {
     temp=sum+n;
     n=sum;
     sum=temp;
-       
-   if ((temp%2!=0)&&(temp<num)) {
+   if ((temp%2!=0)&&(temp<=num)) {
      result.push(temp);
      sumF=sumF+temp;
    };
@@ -18,4 +17,4 @@ function sumFibs(num) {
   console.log(result);
   return sumF;
 }
-console.log(sumFibs(4))
+console.log(sumFibs(75025))
