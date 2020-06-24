@@ -3,17 +3,19 @@ function sumFibs(num) {
   let temp=0;
   let sum=0;
   let n=1;
-  for (let i=1; i<num; i++) {
+  let sumF=0;
+  while (n<num) {
     temp=sum+n;
     n=sum;
     sum=temp;
-
-   result.push(temp);
-
-
+   
+   if (temp%2!=0) {
+     result.push(temp);
+     sumF=sumF+temp;
+   };
   }
-  num=result;
-  return num;
+ 
+  console.log(result);
+  return sumF;
 }
-console.log(sumFibs(7))
-sumFibs(4);
+console.log(sumFibs(400))
