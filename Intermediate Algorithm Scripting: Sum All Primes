@@ -1,0 +1,17 @@
+function sumPrimes(num) {
+  let sum=0;
+  for (let t=2; t<=num; t++) {
+    if (isPrime(t)) {
+      sum=sum+t;
+    }
+  }
+  return sum;
+}
+ function isPrime (n) {
+     if (n==1) return false;
+  for (let d=2; d*d<=n; d++) {
+    if (n%d==0) return false;
+  }
+  return true;
+ }
+console.log(sumPrimes(977));
