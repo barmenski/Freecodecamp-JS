@@ -1,0 +1,17 @@
+function smallestCommons(arr) {
+  return arr;
+}
+
+
+smallestCommons([1,5]);
+
+function nod(fin){
+  let result=[];
+  for (let i=1; i<=fin; i++){
+    if (fin%i==0) {
+      result.push(i);
+    }
+  }
+  return result;
+}
+console.log(nod(9))
