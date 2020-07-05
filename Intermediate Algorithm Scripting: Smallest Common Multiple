@@ -3,7 +3,13 @@ function smallestCommons(arr) {
   let copyInFirst=0;
   let copyInOther=0;
   let arrS=makeArr(arr);
-  for (let i=0; i<)
+  for (let i=0; i<arrS[0].length; i++) {
+    for (let j=0; j<arrS[0].length; j++) {
+      if (arrS[0][i]==arrS[0][j]) {
+        copyInFirst++;
+      }
+    }
+  }
   return result;
 }
 
