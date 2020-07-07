@@ -5,15 +5,16 @@ function smallestCommons(arr) {
   let copyArr=[];
   let arrS=makeArr(arr);
   console.log(arrS);
-  console.log(arrS[0][0]);
+  
   for (let i=0; i<arrS[0].length; i++) {
     for (let j=0; j<arrS[0].length; j++) {
-      if (arrS[0][i]==arrS[0][j]&&i!=j) {
+      if (arrS[0][i]==arrS[0][j]) {
         copyInFirst++;
       }
-      copyArr.push(copyInFirst);
-      copyInFirst=0;
+
     }
+    copyArr.push(copyInFirst);
+    copyInFirst=0;
   }
   
   console.log(copyArr);
@@ -21,7 +22,7 @@ function smallestCommons(arr) {
 }
 
 
-console.log(smallestCommons([3150,3151]));
+console.log(smallestCommons([3150,3152]));
 
 function razl(num){
   let result=[];
