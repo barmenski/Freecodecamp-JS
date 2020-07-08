@@ -1,7 +1,6 @@
 function smallestCommons(arr) {
   let result;
   let copyInFirst=0;
-  let copyInOther=0;
   let resultArr=[];
   let copyArr=[];
   let arrS=makeArr(arr);
@@ -29,19 +28,26 @@ resultArr=arrS[0];
           break;
         } else if (copyArr[i]>1){
           copyArr[i]--;
-         } else {
+         } else if (copyArr[i]==1){
           resultArr.push(arrS[j][z]);
+          z++;
+          copyArr[i]--;
           break;
-          }
+          } 
       }
     }
   };
   console.log(resultArr);
+
+//перемножаем
+result=resultArr.reduce((mult, current)=>mult*current);
   return result;
 }
 
 
-console.log(smallestCommons([3150,3152]));
+
+
+console.log(smallestCommons([2,10]));
 
 function razl(num){
   let result=[];
