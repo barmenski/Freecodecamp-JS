@@ -6,38 +6,15 @@ function smallestCommons(arr) {
   let arrS=makeArr(arr);
   console.log(arrS);
   
-  //считаем копии
-  for (let i=0; i<arrS[0].length; i++) {
-    for (let j=0; j<arrS[0].length; j++) {
-      if (arrS[0][i]==arrS[0][j]) {
-        copyInFirst++;
-      }
-    }
-    copyArr.push(copyInFirst);
-    copyInFirst=0;
-  }
-  console.log(copyArr);
 
 //формируем массив множителей НОК
-resultArr=arrS[0];
-  for (let j=1; j<arrS.length; j++) {
-    for (let z=0; z<arrS[j].length; z++) {
-      for (let i=0; i<arrS[0].length; i++) {
-        if (arrS[0][i]!==arrS[j][z]) {
-          resultArr.push(arrS[j][z]);
-          break;
-        } else if (copyArr[i]>1){
-          copyArr[i]--;
-         } else if (copyArr[i]==1){
-          resultArr.push(arrS[j][z]);
-          z++;
-          copyArr[i]--;
-          break;
-          } 
-      }
-    }
-  };
-  console.log(resultArr);
+resultArr=arrS[0]; //присваиваем первый массив результатирующему массиву
+for (let j=1; j<arrS.length; j++) {
+  for (let z=0; z<arrS[j].length; z++) {
+    if (resultArr.includes(arrS[j][z]))
+  }
+}
+
 
 //перемножаем
 result=resultArr.reduce((mult, current)=>mult*current);
