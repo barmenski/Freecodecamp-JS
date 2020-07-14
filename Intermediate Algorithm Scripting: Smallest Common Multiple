@@ -45,7 +45,7 @@ result=resultArr.reduce((mult, current)=>mult*current);
 
 
 
-console.log(smallestCommons([5,1]));
+console.log(smallestCommons([23,18]));
 
 //раскладываем на множители число
 function razl(num){             
@@ -68,14 +68,14 @@ function makeArr(arr){
   console.log(arLength);
   if (arr[1]>arr[0]) {
     for(let i=0; i<=arLength; i++){
-      result.push(razl(arr[0]+1));
+      result.push(razl(arr[0]+i));
     }
   } else {
     for(let i=0; i<=arLength; i++){
-      result.push(razl(arr[0]-1));
+      result.push(razl(arr[0]-i));
     }
   }
   return result;
 }
 
-//console.log(makeArr([12,9])) 
+//console.log(makeArr([12,9]))
