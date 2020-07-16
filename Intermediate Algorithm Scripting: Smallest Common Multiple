@@ -12,29 +12,35 @@ resultArr=arrS[0]; //присваиваем первый массив резул
 for (let j=1; j<arrS.length; j++) {//[resultArr] <- arrS=[#0[],#j[#z,#z,#z],#j[#z,#z,#z]]
   let copyItem=0;
   for (let z=0; z<arrS[j].length; z++) { 
-    console.log("arrS[j][z]: "+arrS[j][z],"copyItem: "+copyItem);
-    if (resultArr.includes(arrS[j][z])) { //если ЕСТЬ в resultArr, то считаем их кол-во
-            console.log("includes true");
-            for (let b=0; b<resultArr.length; b++) {
-              if (resultArr[b]==arrS[j][z]) {
-                copyItem++;
-              }; 
-            } //посчитали в copyItem
+   //console.log("arrS[j][z]: "+arrS[j][z],"copyItem: "+copyItem);
 
-        if (copyItem==1) { //если только один раз нашли, то 
-          resultArr.push(arrS[j][z]);
-          z++;
-        } else if (copyItem>1) {
-          
-          copyItem--;
-          
-        };
+
+     //-------------
+    if (resultArr.includes(arrS[j][z])/*&&arrS[j][z]!=arrS[j][z-1]*/) { //если ЕСТЬ в resultArr, то считаем их кол-во
+            //console.log("includes true");
+
+            if (arrS[j][z]==arrS[j][z-1]) {
+
+              if (copyItem==1) { //если только один раз нашли, то 
+                resultArr.push(arrS[j][z]);
+                z++;
+              } else if (copyItem>1) {
+                copyItem--;
+                };
+        } else {
+                        for (let b=0; b<resultArr.length; b++) {
+                if (resultArr[b]==arrS[j][z]) {
+                  copyItem++;
+                }; 
+              } //посчитали в copyItem
+        }
           
 
     } else {                          //если НЕТ в resultArr то добавляем в resultArr
       console.log("includes false");
       resultArr.push(arrS[j][z]);
     }
+    //---------------
   }
 }
 console.log("resultArr: "+resultArr);
