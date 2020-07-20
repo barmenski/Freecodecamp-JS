@@ -1,73 +1,40 @@
 function smallestCommons(arr) {
-  let result;
-  let copyInFirst=0;
-  let resultArr=[];
-  let copyArr=[];
-  let arrS=makeArr(arr);
-  console.log(arrS);
-  
-  //считаем копии
-  for (let i=0; i<arrS[0].length; i++) {
-    for (let j=0; j<arrS[0].length; j++) {
-      if (arrS[0][i]==arrS[0][j]) {
-        copyInFirst++;
+  // отсортировали массив из 2 чисел от большего к меньшему
+
+  arr.sort(function(a, b) {
+    return b - a;
+  });
+console.log(arr);//массив из 2 чисел
+
+  // создали новый массив из чисел принадлежащих промежутку чисел массива arr (тоже от большего к меньшему)
+  var newArr = [];
+  for (var i = arr[0]; i >= arr[1]; i--) {
+    newArr.push(i);
+  }
+console.log(newArr);//"разложенный" массив от 2 чисел
+
+  // Переменные должны быть объявлены снаружи цикла
+  var quot = 0;//частное
+  var loop = 1;//кол-во проверенных циклов
+  var n;//индекс числа из массива
+
+  // Run code while n is not the same as the array length.
+  do {
+    quot = newArr[0] * loop * newArr[1];//quot=5*1*4=20 quot=5*2*4=40 quot=5*3*4=60
+    console.log(quot);
+    for (n = 2; n < newArr.length; n++) {
+      if (quot % newArr[n] !== 0) {//20%3!==0true 40%3!==true 60%3!==false
+      console.log("break");
+        break;
       }
+     
     }
-    copyArr.push(copyInFirst);
-    copyInFirst=0;
-  }
-  console.log(copyArr);
 
-//формируем массив множителей НОК
-resultArr=arrS[0];
-  for (let j=1; j<arrS.length; j++) {
-    for (let z=0; z<arrS[j].length; z++) {
-      for (let i=0; i<arrS[0].length; i++) {
-        if (arrS[0][i]!==arrS[j][z]) {
-          resultArr.push(arrS[j][z]);
-          break;
-        } else if (copyArr[i]>1){
-          copyArr[i]--;
-         } else if (copyArr[i]==1){
-          resultArr.push(arrS[j][z]);
-          z++;
-          copyArr[i]--;
-          break;
-          } 
-      }
-    }
-  };
-  console.log(resultArr);
+    loop++;//loop=2 loop=3
+  } while (n !== newArr.length);
 
-//перемножаем
-result=resultArr.reduce((mult, current)=>mult*current);
-  return result;
+  return quot;
 }
 
-
-
-
-console.log(smallestCommons([2,10]));
-
-function razl(num){
-  let result=[];
-  for (let i=2; i<=num; i++){
-    if (num%i==0) {
-      result.push(i);
-      num=num/i;
-      i--;
-    }
-  }
-  return result;
-}
-//console.log(razl(9))
-
-function makeArr(arr){
-  let result=[];
-  for(let i=arr[0]; i<=arr[1]; i++){
-    result.push(razl(i));
-  }
-  return result;
-}
-
-//console.log(makeArr([9,12])) 
+// test here
+smallestCommons([1, 5]);
