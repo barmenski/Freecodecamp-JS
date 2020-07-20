@@ -21,11 +21,9 @@ console.log(newArr);//"разложенный" массив от 2 чисел
   // Run code while n is not the same as the array length.
   do {
     quot = newArr[0] * loop * newArr[1];//quot=5*1*4=20 quot=5*2*4=40 quot=5*3*4=60
-    console.log(quot);
     for (n = 2; n < newArr.length; n++) {
       if (quot % newArr[n] !== 0) {//20%3!==0true 40%3!==true 60%3!==false
-      console.log("break");
-        break;
+       break;
       }
      
     }
