@@ -1,0 +1,9 @@
+function dropElements(arr, func) {
+  let result=arr.filter(func);
+  console.log(result);
+  return result;
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });
+dropElements([0, 1, 0, 1], function(n) {return n === 1;});//should return [1, 0, 1] wtf?
+dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;});//should return [3, 9, 2] wtf?
