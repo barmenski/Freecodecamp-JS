@@ -1,0 +1,17 @@
+function binaryAgent(str) {
+  let arr=str.split(" ");
+  let result1=[];
+  let result2="";
+  
+  arr.forEach((item)=>{
+    result1.push(parseInt(item,2));
+  })
+  console.log(result1);
+  result1.forEach((item)=>{
+    result2=result2+(String.fromCodePoint(item));
+  })
+  console.log(result2);
+  return result2;
+}
+
+binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001");
