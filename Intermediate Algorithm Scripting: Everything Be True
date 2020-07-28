@@ -1,0 +1,16 @@
+function truthCheck(collection, pre) {
+  let arr=[];
+  let result=true;
+  collection.forEach(item=>arr.push(!!item[pre]));
+  console.log(arr);
+
+  arr.forEach(item=>{
+    if(!item) {
+      result=false;
+    }
+  })
+  console.log(result);
+  return result;
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
