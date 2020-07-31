@@ -1,0 +1,9 @@
+function addTogether() {
+  if (typeof(arguments[0])=="number") {
+    return arguments[0]+arguments[1]
+  }
+  console.log(typeof(arguments[0]));
+  return false;
+}
+
+addTogether(2,3);
