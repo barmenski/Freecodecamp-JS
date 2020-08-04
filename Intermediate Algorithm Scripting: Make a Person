@@ -1,38 +1,30 @@
 var Person = function(firstAndLast) {
-  // Only change code below this line
-  // Complete the method below and implement the others similarly
-  
+  var fullName = firstAndLast;
+
+  this.getFirstName = function() {
+    return fullName.split(" ")[0];
+  };
+
+  this.getLastName = function() {
+    return fullName.split(" ")[1];
+  };
+
   this.getFullName = function() {
-    return firstAndLast;
+    return fullName;
   };
 
-  this.getFirstlName = function() {
-    let arr=firstAndLast.split(" ");
-    return arr[0];
+  this.setFirstName = function(name) {
+    fullName = name + " " + fullName.split(" ")[1];
   };
 
-  this.getLastlName = function() {
-    let arr=firstAndLast.split(" ");
-    return arr[1];
+  this.setLastName = function(name) {
+    fullName = fullName.split(" ")[0] + " " + name;
   };
 
-  this.setFirstName = function(first) {
-    this.firstName=first;
+  this.setFullName = function(name) {
+    fullName = name;
   };
-
-  this.setLastName = function(last) {
-    this.lastName=last;
-  };
-    
-  this.setFullName = function(firstAndLast) {
-    this.firstAndLast=firstAndLast;
-  };
-
-  return firstAndLast;
 };
 
-var bob = new Person('Bob Ross');
-console.log(bob.getFullName());
-console.log(bob.setFirstName("Haskell"));
-console.log(bob.getFirstlName());
-console.log(bob.getLastlName());
+var bob = new Person("Bob Ross");
+bob.getFullName();
