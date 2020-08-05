@@ -1,0 +1,20 @@
+function palindrome(str) {
+  let result;
+  let pattern=/[A-Za-z0-9]/g;
+  let str1=str.toUpperCase();
+  result=str1.match(pattern);
+  let strDiv=Math.floor(result.length/2);
+   for (let i=0; i<strDiv; i++){
+    if(!(result[i]==result[result.length-1-i])){
+      return false;
+    }
+  };
+  console.log(result);
+  console.log(strDiv);
+  return true;
+}
+
+
+
+//palindrome("_eye");
+console.log(palindrome("eye"));
