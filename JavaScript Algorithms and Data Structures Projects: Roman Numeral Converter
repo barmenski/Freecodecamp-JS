@@ -1,14 +1,27 @@
 function convertToRoman(num) {
   let result="";
+  let temp=0;
   let RomanNumerals=["I","V","X","L","M","C","D","M"]; // L=50, C=100, D=500, M=1000
 
   let m=Math.floor(num/1000);
-  let d=Math.floor((num-m*1000)/500);
-  let c=Math.floor((num-d*500)/100);
-  let l=Math.floor((num-c*100)/50);
-  let x=Math.floor((num-l*50)/10);
-  let v=Math.floor((num-x*10)/5);
-  let I=Math.floor((num-v*5)/1);
+
+  temp=num-m*1000;
+  let d=Math.floor(temp/500);
+
+  temp=temp-d*500;
+  let c=Math.floor(temp/100);
+
+  temp=temp-c*100
+  let l=Math.floor(temp/50);
+
+  temp=temp-l*50;
+  let x=Math.floor(temp/10);
+
+  temp=temp-x*10;
+  let v=Math.floor(temp/5);
+
+  temp=temp-v*5;
+  let I=Math.floor(temp/1);
   console.log("m="+m+" "+"d="+d+" "+"c="+c+" "+"l="+l+" "+"x="+x+" "+"v="+v+" "+"I="+I)
 
   for (let i=0; i<m; i++) {
@@ -29,8 +42,11 @@ function convertToRoman(num) {
   for (let i=0; i<v; i++) {
     result=result+"V";
   }
+  for (let i=0; i<I; i++) {
+    result=result+"I";
+  }
 console.log(result);
  return result;
 }
  
-convertToRoman(316);
+convertToRoman(4);
