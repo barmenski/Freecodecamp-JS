@@ -45,8 +45,10 @@ function convertToRoman(num) {
   for (let i=0; i<I; i++) {
     result=result+"I";
   }
+  result=result.replace(/IIII/g, "IV");
+  result=result.replace(/VIV/g, "IX");
 console.log(result);
  return result;
 }
  
-convertToRoman(4);
+convertToRoman(99);
