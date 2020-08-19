@@ -47,8 +47,12 @@ function convertToRoman(num) {
   }
   result=result.replace(/IIII/g, "IV");
   result=result.replace(/VIV/g, "IX");
+  result=result.replace(/LXXXX/g, "XC");
+  result=result.replace(/XXXX/g, "XL");
+  result=result.replace(/CCCC/g, "CD");
+  result=result.replace(/DCD/g, "CM");
 console.log(result);
  return result;
 }
  
-convertToRoman(99);
+convertToRoman(3999);
