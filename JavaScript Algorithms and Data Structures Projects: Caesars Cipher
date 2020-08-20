@@ -1,0 +1,16 @@
+function rot13(str) {
+  let result="";
+  let code;
+for (let i=0; i<str.length; i++){
+  code=str.codePointAt(i);
+  
+  code=code-13;
+  
+  result=result+String.fromCodePoint(code);
+}
+  console.log(result);
+  return result;
+}
+console.log("M".codePointAt(0));
+console.log(String.fromCodePoint(96));
+rot13("SERR PBQR PNZC");
