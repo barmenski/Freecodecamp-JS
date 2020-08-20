@@ -1,16 +1,21 @@
 function rot13(str) {
   let result="";
-  let code;
+  let code=0;
 for (let i=0; i<str.length; i++){
   code=str.codePointAt(i);
-  
-  code=code-13;
-  
+  if((code>=65)&&(code<=90)) {
+    console.log(str[i]+" "+code);
+    if (code-13<65) {
+      code=code+13;
+    } else { code=code-13};
+    console.log("****-/+13*****");
+    console.log("result<-"+String.fromCodePoint(code)+" "+code);
+ }
   result=result+String.fromCodePoint(code);
 }
   console.log(result);
   return result;
 }
-console.log("M".codePointAt(0));
-console.log(String.fromCodePoint(96));
+//console.log("R".codePointAt(0));
+//console.log(String.fromCodePoint(56));
 rot13("SERR PBQR PNZC");
