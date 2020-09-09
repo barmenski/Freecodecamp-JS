@@ -11,7 +11,16 @@ var denom = [
 ];
 
 function checkCashRegister(price, cash, cid) {
-  var change;
+  var change=cash-price;
+  console.log(change);
+  let allMoney=0;
+  let arrDiv=[];
+  for (let i=0; i<cid.length; i++){
+    allMoney=allMoney+cid[i][1];
+  }
+  allMoney=Number(allMoney.toFixed(2)); //все деньги в кассе
+  console.log(allMoney);
+  
   return change;
 }
 
