@@ -12,14 +12,19 @@ var denom = [
 
 function checkCashRegister(price, cash, cid) {
   var change=cash-price;
-  console.log(change);
+  console.log("Сдача: "+change);
   let allMoney=0;
   let arrDiv=[];
   for (let i=0; i<cid.length; i++){
     allMoney=allMoney+cid[i][1];
   }
   allMoney=Number(allMoney.toFixed(2)); //все деньги в кассе
-  console.log(allMoney);
+  console.log("В кассе лежит: "+allMoney);
+let ost=0;
+  for (let i=0; i<denom.length; i++){
+    ost=change%denom[i].val;
+    console.log(ost+" | "+denom[i].val)
+  }
   
   return change;
 }
